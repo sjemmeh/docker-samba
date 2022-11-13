@@ -13,9 +13,9 @@ services:
         - GROUP=${GROUP}
         - PUID=${PUID}
         - PGID=${PGID}
-    volumes:
-      - /mnt/Data:/mnt/Data
-      - /mnt/Speedy:/mnt/Speedy
+    volumes: # add your local mappings here
+      - /mnt/sample:/mnt/sample
+      - ./confs:/config # this is required
     ports:
       - 135:135/tcp
       - 137:137/udp
