@@ -1,5 +1,4 @@
-# docker-samba
-
+## Samba docker container, based on ubuntu as a time machine share
 Create a .env file that contains the following:<br />
 ```
 PUID=
