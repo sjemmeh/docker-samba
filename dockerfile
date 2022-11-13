@@ -14,7 +14,10 @@ RUN apt update && apt -y upgrade
 # Install samba and supervisor
 RUN apt install -y samba supervisor
 
+# Add defined group and user
 RUN addgroup -gid ${PGID} ${GROUP}  && adduser --no-create-home --disabled-password --disabled-login ${USERNAME} -uid ${PUID} -gid ${PGID}
+
+# Set samba password
 RUN (echo ${PASSWORD} ; echo ${PASSWORD})  | smbpasswd -a -s ${USERNAME}
 
 VOLUME /config
